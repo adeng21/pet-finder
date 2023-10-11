@@ -10,11 +10,18 @@ export default function Dog(dogProps) {
         return (
             <div className="group">
             <Link href={url} target="blank">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <div className="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                     <Image className="h-full w-full object-cover object-center group-hover:opacity-75" width={400} height={400} src={primary_photo_cropped.small} alt="profile-photo"/>
                 </div>
             </Link>
-                <h3 className="mt-1 text-lg font-medium text-gray-900">{name}</h3>
+                <div>
+                    <h3 className="mt-1 text-lg font-medium text-gray-900">{name}</h3>
+
+                    <button className="inline-flex items-center justify-center w-10 h-10 mr-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800">
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    </button>
+
+                </div>
                 <div className='my-2'>
                     {getGender(gender)}
                 </div>
