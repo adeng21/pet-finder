@@ -14,16 +14,19 @@ export async function getStaticProps() {
 
 
 export default function Home({dogsData}) {
-  console.log(dogsData)
     return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Katie's Pet Finder</h2>
+
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {dogsData.map((dog)=> (
             (<Dog key={dog.id} dogProps={dog}/>)
           ))}
-          
+            
+          </div>
         </div>
-      </main>
+        
+      </div>
     )
   }
